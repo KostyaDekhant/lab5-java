@@ -49,7 +49,7 @@ public class FIO{
     }
 	public FIO read_FIO()
 	{
-		Scanner in = new Scanner(System.in);
+		Scanner in = new Scanner(System.in, "cp866");
         String first, mid, last;
         System.out.print("Введите фамилию: ");
 		last = in.nextLine();

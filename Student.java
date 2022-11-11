@@ -33,7 +33,7 @@ public class Student{
     }
 	public void read_student()
 	{
-		Scanner in = new Scanner(System.in);
+		Scanner in = new Scanner(System.in, "cp866");
         System.out.print("\nВвод студента: \n");
         this.human = human.read_human();
         System.out.print("Введите размер стипендии: ");
@@ -56,7 +56,7 @@ public class Student{
     }
     public void ChangeInfo()
     {
-        Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in, "cp866");
         System.out.print("Выберите, что хотите поменять: \n1. ФИО\n2.Паспортные данные\n3.Возраст\n" + 
         "4.Номер группы\n5.Размер стипендии\n");
         int inp = in.nextInt();
@@ -102,7 +102,7 @@ public class Student{
         sh.sholar = this.sholarship;
     }
 	public void FileWriteStudentName(){
-        try (FileOutputStream fos = new FileOutputStream("C://java/Students.txt", true)){
+        try (FileOutputStream fos = new FileOutputStream("C://Users/Podor/Documents/GitHub/lab5-java/Students.txt", true)){
             byte[] buffer = (this.human.getFIO().getLast() + "\n" + 
 			this.human.getFIO().getFirst() + "\n" + this.human.getFIO().getMid() + "\n").getBytes();
             fos.write(buffer, 0, buffer.length);
@@ -112,10 +112,12 @@ public class Student{
         }
     }
     public void FileReadStudentName(){
-        try (FileInputStream fin = new FileInputStream("C://java/Students.txt")){
+        try (FileInputStream fin = new FileInputStream("C://Users/Podor/Documents/GitHub/lab5-java/Students.txt")){
             int i = -1;
+			PrintStream out = new PrintStream(System.out, true, "cp866");
             while ((i=fin.read())!=-1){
-                System.out.print((char)i);
+				out.print((char)i);
+            //   System.out.print((char)i);
             }
         }
         catch (IOException ex){

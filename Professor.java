@@ -39,7 +39,7 @@ public class Professor{
     }
 	public void read_professor()
 	{
-		Scanner in = new Scanner(System.in);
+		Scanner in = new Scanner(System.in, "cp866");
         System.out.print("\nВвод преподавателя: \n");
         this.human = human.read_human();
         System.out.print("Введите размер зарплаты: ");
@@ -65,7 +65,7 @@ public class Professor{
     }
     public void ChangeInfo()
     {
-        Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in, "cp866");
         System.out.print("Выберите, что хотите поменять: \n1. ФИО\n2.Паспортные данные\n3.Возраст\n" + 
         "4.Предмет\n5.Размер зарплаты\n6.Стаж\n");
         int inp = in.nextInt();

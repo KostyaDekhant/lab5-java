@@ -38,7 +38,7 @@ public class Passport_data
     }
     public Passport_data read_pd()
     {
-        Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in, "cp866");
         String num, ser;
         System.out.print("Ведите номер паспорта: ");
 		num = in.next();

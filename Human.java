@@ -58,7 +58,7 @@ public class Human{
     }
 	public Human read_human()
 	{
-		Scanner in = new Scanner(System.in);
+		Scanner in = new Scanner(System.in, "cp866");
         FIO fio1 = new FIO();
         Passport_data pd1 = new Passport_data();
         fio1 = fio1.read_FIO();
